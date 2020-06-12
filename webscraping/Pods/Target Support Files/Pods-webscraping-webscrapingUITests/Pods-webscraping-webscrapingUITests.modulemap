@@ -1,6 +1,0 @@
-framework module Pods_webscraping_webscrapingUITests {
-  umbrella header "Pods-webscraping-webscrapingUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
