@@ -31,7 +31,7 @@ class DataNumbers: UIViewController {
         super.viewDidLoad()
     }
     
-    func allInfo(dataArray: [County]) -> [County]{
+    func allInfo() -> [County]{
         do {
             let url = URL(string: "https://www.worldometers.info/coronavirus/usa/texas/" )
             let html = try String(contentsOf: url!, encoding: String.Encoding.ascii)

@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
 //    var vc = DataNumbers(nibName: nil, bundle: nil)
-    var data = DataNumbers(nibName: nil, bundle: nil).allInfo(dataArray: DataNumbers(nibName: nil, bundle: nil).values)
+    var data = DataNumbers(nibName: nil, bundle: nil).allInfo()
     
 
     
