@@ -31,13 +31,13 @@ class DataNumbers: UIViewController {
         super.viewDidLoad()
     }
     
-    func allInfo(dataArray: [County]) -> [County]{
+    func allInfo() -> [County]{
         do {
             let url = URL(string: "https://www.worldometers.info/coronavirus/usa/texas/" )
             let html = try String(contentsOf: url!, encoding: String.Encoding.ascii)
             let doc:Document = try SwiftSoup.parse(html)
 
-            let x = 10
+            let x = 12
 
             for i in 1...x{
                 var str_county = " ";
