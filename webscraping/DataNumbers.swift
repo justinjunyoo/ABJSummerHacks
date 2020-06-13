@@ -37,7 +37,7 @@ class DataNumbers: UIViewController {
             let html = try String(contentsOf: url!, encoding: String.Encoding.ascii)
             let doc:Document = try SwiftSoup.parse(html)
 
-            let x = 10
+            let x = 8
 
             for i in 1...x{
                 var str_county = " ";
