@@ -14,6 +14,8 @@ class GraphsTableViewCell: UITableViewCell, ChartViewDelegate {
 
     @IBOutlet weak var barChart: BarChartView!
     
+    @IBOutlet weak var yTitle: UILabel!
+    @IBOutlet weak var TopTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

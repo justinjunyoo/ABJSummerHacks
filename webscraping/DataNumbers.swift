@@ -39,7 +39,7 @@ class DataNumbers: UIViewController {
 
             let x = 12
 
-            for i in 1...x{
+            for i in 2...x{
                 var str_county = " ";
                 let counties = try doc.select("#usa_table_countries_today > tbody:nth-child(2) > tr:nth-child(\(i)) > td:nth-child(1)")
                 str_county = try counties.text()

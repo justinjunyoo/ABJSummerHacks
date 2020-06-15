@@ -13,6 +13,7 @@ class GraphsViewController: UIViewController, UITableViewDelegate, ChartViewDele
 
     
     @IBOutlet weak var tableView: UITableView!
+  
     var data = ViewController(nibName: nil, bundle: nil).data
     
     override func viewDidLoad() {
@@ -37,19 +38,27 @@ class GraphsViewController: UIViewController, UITableViewDelegate, ChartViewDele
         
         var str = [String]()
         var array = [Int]()
-        for i in 1...data.count - 1{
+        for i in 0...data.count - 1{
             str.append(String(data[i].name))
         }
         
         
         if indexPath.row == 0 {
-            for i in 1...data.count - 1{
+            cell.TopTitle.text = "County Cases"
+            cell.yTitle.text = "Number of Cases"
+            cell.yTitle.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+            cell.backgroundColor = UIColor.systemBlue
+            for i in 0...data.count - 1{
                 array.append(data[i].cases)
             }
         }
             
         else if indexPath.row == 1 {
-            for i in 1...data.count - 1{
+            cell.TopTitle.text = "County Deaths"
+            cell.yTitle.text = "Number of Deaths"
+            cell.yTitle.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+            cell.backgroundColor = UIColor.systemRed
+            for i in 0...data.count - 1{
                 array.append(data[i].deaths)
             }
         }
