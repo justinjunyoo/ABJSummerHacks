@@ -18,28 +18,20 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="covid2" translatesAutoresizingMaskIntoConstraints="NO" id="Fyg-7U-PHc">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COVID-SARS-19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXd-KF-Wxt">
-                                <rect key="frame" x="51.5" y="424" width="311" height="48"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Fyg-7U-PHc" secondAttribute="bottom" id="I7d-wA-fLZ"/>
-                            <constraint firstItem="gXd-KF-Wxt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Wpb-Bz-7g4"/>
                             <constraint firstItem="Fyg-7U-PHc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Xp5-xT-znf"/>
                             <constraint firstAttribute="trailing" secondItem="Fyg-7U-PHc" secondAttribute="trailing" id="aox-sR-cZu"/>
                             <constraint firstItem="Fyg-7U-PHc" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="bMe-fP-MRN"/>
-                            <constraint firstItem="gXd-KF-Wxt" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="hxD-7f-NfE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+            <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
     <resources>

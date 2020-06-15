@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		69356C342494861200228ADD /* GraphsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69356C332494861200228ADD /* GraphsTableViewCell.swift */; };
-		69356C3A24948A6600228ADD /* GraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69356C3924948A6600228ADD /* GraphsViewController.swift */; };
+		69093AC12492D16B00EBB0B7 /* GraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69093AC02492D16B00EBB0B7 /* GraphsViewController.swift */; };
 		69699EA52483490800673156 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69699EA42483490800673156 /* AppDelegate.swift */; };
 		69699EA72483490800673156 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69699EA62483490800673156 /* SceneDelegate.swift */; };
 		69699EA92483490800673156 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69699EA82483490800673156 /* ViewController.swift */; };
@@ -45,8 +44,7 @@
 		2347C27E84D9E9524F36FCC7 /* Pods_webscraping_webscrapingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_webscraping_webscrapingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3513ADB1F50A7B0572BBDADE /* Pods-webscraping-webscrapingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webscraping-webscrapingUITests.release.xcconfig"; path = "Target Support Files/Pods-webscraping-webscrapingUITests/Pods-webscraping-webscrapingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		63CAA969EE76F2AEC66692E1 /* Pods-webscraping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webscraping.release.xcconfig"; path = "Target Support Files/Pods-webscraping/Pods-webscraping.release.xcconfig"; sourceTree = "<group>"; };
-		69356C332494861200228ADD /* GraphsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphsTableViewCell.swift; sourceTree = "<group>"; };
-		69356C3924948A6600228ADD /* GraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphsViewController.swift; sourceTree = "<group>"; };
+		69093AC02492D16B00EBB0B7 /* GraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphsViewController.swift; sourceTree = "<group>"; };
 		69699EA12483490800673156 /* webscraping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = webscraping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69699EA42483490800673156 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69699EA62483490800673156 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,8 +141,7 @@
 				69699EB22483490D00673156 /* Info.plist */,
 				69BBAF792491D64200A4215E /* DataNumbers.swift */,
 				69BBAF7B249201E400A4215E /* CustomTableViewCell.swift */,
-				69356C332494861200228ADD /* GraphsTableViewCell.swift */,
-				69356C3924948A6600228ADD /* GraphsViewController.swift */,
+				69093AC02492D16B00EBB0B7 /* GraphsViewController.swift */,
 			);
 			path = webscraping;
 			sourceTree = "<group>";
@@ -420,12 +417,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				69699EA92483490800673156 /* ViewController.swift in Sources */,
+				69093AC12492D16B00EBB0B7 /* GraphsViewController.swift in Sources */,
 				69BBAF7C249201E400A4215E /* CustomTableViewCell.swift in Sources */,
 				69699EA52483490800673156 /* AppDelegate.swift in Sources */,
 				69BBAF7A2491D64200A4215E /* DataNumbers.swift in Sources */,
-				69356C3A24948A6600228ADD /* GraphsViewController.swift in Sources */,
 				69699EA72483490800673156 /* SceneDelegate.swift in Sources */,
-				69356C342494861200228ADD /* GraphsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
