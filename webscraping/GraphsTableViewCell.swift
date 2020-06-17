@@ -12,17 +12,23 @@ import Charts
 class GraphsTableViewCell: UITableViewCell, ChartViewDelegate {
     
 
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var xTitle: UILabel!
+    @IBOutlet weak var yTitle: UILabel!
     @IBOutlet weak var barChart: BarChartView!
     
-    @IBOutlet weak var yTitle: UILabel!
-    @IBOutlet weak var TopTitle: UILabel!
+    
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
     }
     
-    func setChart(str: [String], values: [Int]) {
+    func setBarChart(str: [String], values: [Int]) {
        var array: [BarChartDataEntry] = []
         barChart.backgroundColor = UIColor.white
 
@@ -32,14 +38,19 @@ class GraphsTableViewCell: UITableViewCell, ChartViewDelegate {
 
         barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: str)
         let set = BarChartDataSet(entries: array)
-        set.colors = ChartColorTemplates.joyful()
+        set.colors = [UIColor.systemRed,UIColor.systemOrange,UIColor.systemYellow, UIColor.orange]
+        
+        // barCornerRadius = CGFloat(5.0)
+        
         let data2 = BarChartData(dataSet: set)
         barChart.xAxis.granularity = 1
-        barChart.setVisibleXRangeMaximum(10)
-        barChart.moveViewToX(90)
+        barChart.setVisibleXRangeMaximum(20)
+
+        barChart.moveViewToX(70)
+
         barChart.xAxis.labelPosition = XAxis.LabelPosition.bottomInside
         barChart.xAxis.avoidFirstLastClippingEnabled = false
-        barChart.xAxis.labelFont = UIFont(name: "Verdana", size: 7.0)!
+        barChart.xAxis.labelFont = UIFont(name: "Verdana", size: 7.5)!
         barChart.rightAxis.enabled = false
         barChart.legend.enabled = false
         barChart.xAxis.drawGridLinesEnabled = false
@@ -53,6 +64,7 @@ class GraphsTableViewCell: UITableViewCell, ChartViewDelegate {
         barChart.highlighter = nil
         
         barChart.data = data2
+        
     }
 
 

@@ -73,7 +73,15 @@ class DataNumbers: UIViewController {
         }
     
         return values;
-
+    }
+    
+    
+    func getCounties(data: [County])->[String]{
+        var str = [String]()
+        for i in 0...data.count-1{
+            str.append(data[i].name)
+        }
+        return str
     }
     
     
