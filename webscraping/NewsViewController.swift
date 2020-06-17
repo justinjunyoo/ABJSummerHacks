@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import Kingfisher
 
 class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -77,6 +78,13 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.desc.text = self.articles?[indexPath.row].desc
         cell.imgView?.downloadImage(from: (self.articles?[indexPath.row].image)!)
 //        cell.imageView?.frame = CGRect(x: 8, y: 8, width: 100, height: 100)
+        
+        
+//        let resource = ImageResource(downloadURL: URL(string: (self.articles?[indexPath.row].url)!)!, cacheKey: self.articles?[indexPath.row].url);
+        let resource = URL(string: (self.articles?[indexPath.row].url)!)!
+        cell.imgView.kf.setImage(with: resource)
+        
+        
         return cell;
     }
     
