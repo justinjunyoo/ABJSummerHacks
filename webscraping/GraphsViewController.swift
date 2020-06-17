@@ -38,7 +38,7 @@ class GraphsViewController: UIViewController, UITableViewDelegate, ChartViewDele
         var str = [String]()
         var array = [Int]()
         
-        for i in 1...data.count - 1{
+        for i in 0...data.count - 1{
             str.append(String(data[i].name))
         }
         
