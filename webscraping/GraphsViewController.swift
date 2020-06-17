@@ -46,7 +46,7 @@ class GraphsViewController: UIViewController, UITableViewDelegate, ChartViewDele
         
         if indexPath.row == 0 {
             
-            for i in 1...data.count - 1{
+            for i in 0...data.count - 1{
                 array.append(data[i].cases)
                 cell.title.text = "Cases in Counties"
                 cell.xTitle.text = "Counties"
@@ -58,7 +58,7 @@ class GraphsViewController: UIViewController, UITableViewDelegate, ChartViewDele
         }
             
         else if indexPath.row == 1 {
-            for i in 1...data.count - 1{
+            for i in 0...data.count - 1{
                 array.append(data[i].deaths)
                 cell.title.text = "Deaths in Counties"
                 cell.xTitle.text = "Counties"
@@ -75,7 +75,5 @@ class GraphsViewController: UIViewController, UITableViewDelegate, ChartViewDele
         cell.selectionStyle = .none
         return cell
     }
-    
-   
 
 }

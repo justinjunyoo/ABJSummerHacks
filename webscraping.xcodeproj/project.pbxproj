@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6930C13B2499F2190022FAE9 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6930C13A2499F2190022FAE9 /* NewsTableViewCell.swift */; };
+		6930C13D2499F24D0022FAE9 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6930C13C2499F24D0022FAE9 /* NewsViewController.swift */; };
+		6930C13F2499F3270022FAE9 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6930C13E2499F3270022FAE9 /* Article.swift */; };
+		6930C1412499F38E0022FAE9 /* WebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6930C1402499F38E0022FAE9 /* WebviewViewController.swift */; };
+		6930C1432499F8E30022FAE9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6930C1422499F8E30022FAE9 /* WebKit.framework */; };
 		69356C342494861200228ADD /* GraphsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69356C332494861200228ADD /* GraphsTableViewCell.swift */; };
 		69356C3A24948A6600228ADD /* GraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69356C3924948A6600228ADD /* GraphsViewController.swift */; };
 		69699EA52483490800673156 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69699EA42483490800673156 /* AppDelegate.swift */; };
@@ -45,6 +50,11 @@
 		2347C27E84D9E9524F36FCC7 /* Pods_webscraping_webscrapingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_webscraping_webscrapingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3513ADB1F50A7B0572BBDADE /* Pods-webscraping-webscrapingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webscraping-webscrapingUITests.release.xcconfig"; path = "Target Support Files/Pods-webscraping-webscrapingUITests/Pods-webscraping-webscrapingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		63CAA969EE76F2AEC66692E1 /* Pods-webscraping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webscraping.release.xcconfig"; path = "Target Support Files/Pods-webscraping/Pods-webscraping.release.xcconfig"; sourceTree = "<group>"; };
+		6930C13A2499F2190022FAE9 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		6930C13C2499F24D0022FAE9 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		6930C13E2499F3270022FAE9 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		6930C1402499F38E0022FAE9 /* WebviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewViewController.swift; sourceTree = "<group>"; };
+		6930C1422499F8E30022FAE9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		69356C332494861200228ADD /* GraphsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphsTableViewCell.swift; sourceTree = "<group>"; };
 		69356C3924948A6600228ADD /* GraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphsViewController.swift; sourceTree = "<group>"; };
 		69699EA12483490800673156 /* webscraping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = webscraping.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6930C1432499F8E30022FAE9 /* WebKit.framework in Frameworks */,
 				80BC3DA0073386DE2A127627 /* Pods_webscraping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +113,7 @@
 		4BED4590FBE319CCD44ACA6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6930C1422499F8E30022FAE9 /* WebKit.framework */,
 				F19A85CCA04CF303E22C03CB /* Pods_webscraping.framework */,
 				2347C27E84D9E9524F36FCC7 /* Pods_webscraping_webscrapingUITests.framework */,
 				DBBE6A887D1CA9CFCB031A55 /* Pods_webscrapingTests.framework */,
@@ -145,6 +157,10 @@
 				69BBAF7B249201E400A4215E /* CustomTableViewCell.swift */,
 				69356C332494861200228ADD /* GraphsTableViewCell.swift */,
 				69356C3924948A6600228ADD /* GraphsViewController.swift */,
+				6930C13A2499F2190022FAE9 /* NewsTableViewCell.swift */,
+				6930C13C2499F24D0022FAE9 /* NewsViewController.swift */,
+				6930C13E2499F3270022FAE9 /* Article.swift */,
+				6930C1402499F38E0022FAE9 /* WebviewViewController.swift */,
 			);
 			path = webscraping;
 			sourceTree = "<group>";
@@ -420,10 +436,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				69699EA92483490800673156 /* ViewController.swift in Sources */,
+				6930C1412499F38E0022FAE9 /* WebviewViewController.swift in Sources */,
 				69BBAF7C249201E400A4215E /* CustomTableViewCell.swift in Sources */,
+				6930C13B2499F2190022FAE9 /* NewsTableViewCell.swift in Sources */,
 				69699EA52483490800673156 /* AppDelegate.swift in Sources */,
+				6930C13F2499F3270022FAE9 /* Article.swift in Sources */,
 				69BBAF7A2491D64200A4215E /* DataNumbers.swift in Sources */,
 				69356C3A24948A6600228ADD /* GraphsViewController.swift in Sources */,
+				6930C13D2499F24D0022FAE9 /* NewsViewController.swift in Sources */,
 				69699EA72483490800673156 /* SceneDelegate.swift in Sources */,
 				69356C342494861200228ADD /* GraphsTableViewCell.swift in Sources */,
 			);
