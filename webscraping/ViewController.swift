@@ -23,11 +23,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //    var vc = DataNumbers(nibName: nil, bundle: nil)
     var data = DataNumbers(nibName: nil, bundle: nil).allInfo()
 
-
+    
+    
     override func viewDidLoad() {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
 
 //        for i in 0...data.count - 1{
 //            print(counties[i])
@@ -65,6 +67,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        texasDeaths.text = "Deaths: " + String(data[0].deaths)
 //        texasDeaths.lineBreakMode = .byWordWrapping
 //
+        
         super.viewDidLoad()
     }
     

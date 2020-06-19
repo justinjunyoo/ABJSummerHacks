@@ -300,12 +300,15 @@
         <!--News-->
         <scene sceneID="Yh6-V2-e6m">
             <objects>
-                <navigationController id="Su5-oU-3vX" sceneMemberID="viewController">
+                <navigationController hidesBarsOnSwipe="YES" id="Su5-oU-3vX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" image="news" id="ONS-mL-dLN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wgR-KO-8cO">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ile-Ub-zUW">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="xoU-dA-GN5" kind="relationship" relationship="rootViewController" id="o4c-TQ-Av6"/>
                     </connections>
@@ -430,16 +433,29 @@
                                 <items>
                                     <navigationItem title="Title" id="rDI-1K-X5G">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="Dq8-lL-jgT">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="n7B-f0-Fjb">
-                                                <rect key="frame" x="20" y="5" width="92" height="34"/>
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n7B-f0-Fjb">
+                                                <rect key="frame" x="20" y="11" width="69" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="&lt; Back"/>
+                                                <state key="normal" title=" Back " image="chevron.left" catalog="system">
+                                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="returnNews:" destination="FyI-EA-JYD" eventType="touchUpInside" id="pen-qA-VQy"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="Mail" image="envelope" catalog="system" id="Y1X-5s-ZBb">
+                                                <connections>
+                                                    <action selector="shareEmail:" destination="FyI-EA-JYD" id="c4z-Mf-s6E"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Sms" image="message" catalog="system" id="ysT-ZA-oEJ">
+                                                <connections>
+                                                    <action selector="shareSMS:" destination="FyI-EA-JYD" id="4jj-Eb-kgM"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -475,7 +491,10 @@
     </scenes>
     <resources>
         <image name="barChart" width="24" height="24"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="envelope" catalog="system" width="128" height="93"/>
         <image name="icons8-table-24" width="24" height="24"/>
+        <image name="message" catalog="system" width="128" height="113"/>
         <image name="news" width="24" height="24"/>
     </resources>
 </document>
