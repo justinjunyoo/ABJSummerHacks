@@ -15,7 +15,7 @@ class WebviewViewController: UIViewController, WKNavigationDelegate, MFMailCompo
 
     
     @IBOutlet weak var webView: WKWebView!
-    var url: String?
+    var url: String? 
     
     
 

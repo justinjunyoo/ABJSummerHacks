@@ -54,7 +54,7 @@ class GraphsTableViewCell: UITableViewCell, ChartViewDelegate {
         barChart.rightAxis.enabled = false
         barChart.legend.enabled = false
         barChart.xAxis.drawGridLinesEnabled = false
-        barChart.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .easeOutElastic)
+        barChart.animate(xAxisDuration: 2.0, yAxisDuration: 3.0, easingOption: .easeInOutQuart )
   
         
         barChart.data?.setDrawValues(false)

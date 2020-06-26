@@ -48,6 +48,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                             article.image = urlToImage
                             
                             self.articles?.append(article)
+
                         }
                     }
                 }
@@ -60,6 +61,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
         task.resume()
+
     }
 
     
