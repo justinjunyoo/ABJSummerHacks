@@ -54,7 +54,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
-                }
+                } 
             }catch let err{
                 print(err)
             }

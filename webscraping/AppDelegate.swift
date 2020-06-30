@@ -7,14 +7,35 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var data = DataNumbers(nibName: nil, bundle: nil).allInfo()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
+        
+//        let db = Firestore.firestore()
+//        print(db) // silence warning
+//
+//        for i in 0...data.count-1{
+//            db.collection("Counties").document("\(data[i].name)").setData([
+//                "Name": "\(data[i].name)",
+//                "Cases": "\(data[i].cases)",
+//                "Deaths": "\(data[i].deaths)"
+//            ]) { err in
+//                if let err = err {
+//                    print("Error writing document: \(err)")
+//                } else {
+//                    print("Document successfully written!")
+//                }
+//            }
+//        }
+
         return true
     }
 

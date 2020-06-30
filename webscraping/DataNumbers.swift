@@ -8,13 +8,18 @@
 
 import UIKit
 import SwiftSoup
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+
 
 class DataNumbers: UIViewController {
 
     
     var values = [County]()
+    var countyCollection : CollectionReference!
     
-    struct County{
+    public struct County{
         var name: String
         var cases: Int
         var deaths: Int
@@ -37,9 +42,9 @@ class DataNumbers: UIViewController {
             let html = try String(contentsOf: url!, encoding: String.Encoding.ascii)
             let doc:Document = try SwiftSoup.parse(html)
 
-            let x = 12
+            let x = 30
 
-            for i in 2...x{
+            for i in 1...x{
                 var str_county = " ";
                 let counties = try doc.select("#usa_table_countries_today > tbody:nth-child(2) > tr:nth-child(\(i)) > td:nth-child(1)")
                 str_county = try counties.text()
@@ -74,6 +79,34 @@ class DataNumbers: UIViewController {
     
         return values;
     }
+    
+    
+
+//    func allInfo2(completion: @escaping (_ message: String) -> Void) -> [County]{
+//        countyCollection = Firestore.firestore().collection("Counties")
+//        countyCollection.getDocuments { (snapshot, error) in
+//            if let err = error{
+//                debugPrint("Error: \(err)")
+//            }
+//            else{
+//                guard let snap = snapshot else {return}
+//                for documents in snap.documents{
+//                    let name = (documents["Name"] as? String)
+//                    let cases = (documents["Cases"] as? Int)
+//                    let deaths = (documents["Deaths"] as? Int)
+//                    let data = County(name: name ?? "", cases: cases ?? 0, deaths: deaths ?? 0)
+//                    print(data.name)
+//                    self.values.append(data)
+//                }
+//            completion("DONE")
+//            }
+//        }
+//        print(values.isEmpty)
+//        return values
+//    }
+//
+        
+    
     
     
     func getCounties(data: [County])->[String]{

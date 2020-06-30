@@ -10,15 +10,27 @@ import UIKit
 import Charts
 
 class GraphsViewController: UIViewController, UITableViewDelegate, ChartViewDelegate, UITableViewDataSource {
-
+    
+//    var data3 = ViewController(nibName: nil, bundle: nil).setGraphData()
     
     @IBOutlet weak var tableView: UITableView!
-    var data = ViewController(nibName: nil, bundle: nil).data
+    var data = [ViewController.County]()
+    let names = UserDefaults.standard.array(forKey: "name_count")
+    let cases = UserDefaults.standard.array(forKey: "case_count")
+    let deaths = UserDefaults.standard.array(forKey: "death_count")
+
     
     override func viewDidLoad() {
-        
+//        print(data3.isEmpty, "dpg")
         tableView.delegate = self
         tableView.dataSource = self
+
+        for i in 0...29{
+            let data2 = ViewController.County(name: names![i] as! String, cases: cases![i] as! Int, deaths: deaths![i] as! Int)
+            data.append(data2)
+            
+        }
+        
         super.viewDidLoad()
         
     }

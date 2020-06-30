@@ -11,6 +11,9 @@ target 'webscraping' do
   pod 'SwiftSoup'
   pod 'Charts'
   pod 'Kingfisher', '~> 5.0'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
 
   target 'webscrapingTests' do
     inherit! :search_paths
