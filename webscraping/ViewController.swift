@@ -79,8 +79,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     public func setGraphData(){
         data2 = self.data
     }
-
-    
     
     
     public func allInfo2() -> [County]{
@@ -125,12 +123,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     deaths_cnt.append(self.data[i].deaths)
                     names_cnt.append(self.data[i].name)
                 }
-//                UserDefaults.resetStandardUserDefaults()
-//                UserDefaults.standard.set(cases_cnt, forKey: "case_count")
-//                UserDefaults.standard.set(deaths_cnt, forKey: "death_count")
-//                UserDefaults.standard.set(names_cnt, forKey: "name_count")
-                
-                if self.cnt == 1{
+                UserDefaults.resetStandardUserDefaults()
+                if self.cnt == 1 {
+                    UserDefaults.resetStandardUserDefaults()
+                    UserDefaults.standard.set(cases_cnt, forKey: "case_count")
+                    UserDefaults.standard.set(deaths_cnt, forKey: "death_count")
+                    UserDefaults.standard.set(names_cnt, forKey: "name_count")
+        
                     self.viewDidLoad()
                 }
             }
@@ -149,6 +148,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return data.count - 1
 
     }
+
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 100.0
