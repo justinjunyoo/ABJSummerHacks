@@ -32,7 +32,7 @@ class GraphsTableViewCell: UITableViewCell, ChartViewDelegate {
        var array: [BarChartDataEntry] = []
         barChart.backgroundColor = UIColor.white
 
-       for i in 0..<values.count  {
+       for i in 1..<values.count  {
           array.append(BarChartDataEntry(x: Double(i), y: Double(values[i])))
        }
 
@@ -44,7 +44,8 @@ class GraphsTableViewCell: UITableViewCell, ChartViewDelegate {
         
         let data2 = BarChartData(dataSet: set)
         barChart.xAxis.granularity = 1
-        barChart.setVisibleXRangeMaximum(20)
+//        barChart.setVisibleXRangeMaximum(10)
+        
 
         barChart.moveViewToX(70)
 
@@ -54,8 +55,10 @@ class GraphsTableViewCell: UITableViewCell, ChartViewDelegate {
         barChart.rightAxis.enabled = false
         barChart.legend.enabled = false
         barChart.xAxis.drawGridLinesEnabled = false
-        barChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInOutQuart)
-        
+        barChart.animate(xAxisDuration: 2.0, yAxisDuration: 3.0, easingOption: .easeInOutQuart )
+        barChart.xAxis.labelRotationAngle = -90.0
+
+  
         
         barChart.data?.setDrawValues(false)
         barChart.pinchZoomEnabled = true
