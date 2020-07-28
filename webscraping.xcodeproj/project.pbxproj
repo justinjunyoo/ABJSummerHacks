@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6903C9DE24CA553C00BAFFC3 /* TexasMonthlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6903C9DD24CA553C00BAFFC3 /* TexasMonthlyViewController.swift */; };
+		6903C9E024CA555200BAFFC3 /* TexasAllTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6903C9DF24CA555200BAFFC3 /* TexasAllTimeViewController.swift */; };
+		6903C9E224CA556000BAFFC3 /* TexasWeeklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6903C9E124CA556000BAFFC3 /* TexasWeeklyViewController.swift */; };
+		692F44B124CCFB350020D1D8 /* TexasAllLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692F44B024CCFB350020D1D8 /* TexasAllLineTableViewCell.swift */; };
+		692F44B324CE4EC70020D1D8 /* TexasAllBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692F44B224CE4EC70020D1D8 /* TexasAllBarTableViewCell.swift */; };
 		6930C13B2499F2190022FAE9 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6930C13A2499F2190022FAE9 /* NewsTableViewCell.swift */; };
 		6930C13D2499F24D0022FAE9 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6930C13C2499F24D0022FAE9 /* NewsViewController.swift */; };
 		6930C13F2499F3270022FAE9 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6930C13E2499F3270022FAE9 /* Article.swift */; };
@@ -23,6 +28,12 @@
 		69699EB12483490D00673156 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69699EAF2483490D00673156 /* LaunchScreen.storyboard */; };
 		69699EBC2483490D00673156 /* webscrapingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69699EBB2483490D00673156 /* webscrapingTests.swift */; };
 		69699EC72483490D00673156 /* webscrapingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69699EC62483490D00673156 /* webscrapingUITests.swift */; };
+		696FB4CC24CFCBB500289D74 /* TexasWeeklyLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696FB4CB24CFCBB500289D74 /* TexasWeeklyLineTableViewCell.swift */; };
+		696FB4CE24CFCBCC00289D74 /* TexasWeeklyBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696FB4CD24CFCBCC00289D74 /* TexasWeeklyBarTableViewCell.swift */; };
+		696FB4D024D010CE00289D74 /* CountyGraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696FB4CF24D010CE00289D74 /* CountyGraphsViewController.swift */; };
+		69960A8D24CE7AC900CA0FF4 /* ChartMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69960A8C24CE7AC900CA0FF4 /* ChartMarker.swift */; };
+		69960A8F24CF597B00CA0FF4 /* TexasMonthlyLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69960A8E24CF597B00CA0FF4 /* TexasMonthlyLineTableViewCell.swift */; };
+		69960A9124CF599B00CA0FF4 /* TexasMonthlyBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69960A9024CF599B00CA0FF4 /* TexasMonthlyBarTableViewCell.swift */; };
 		69AAB20724C6330900C17533 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69AAB20624C6330900C17533 /* GoogleService-Info.plist */; };
 		69BBAF7A2491D64200A4215E /* DataNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BBAF792491D64200A4215E /* DataNumbers.swift */; };
 		69BBAF7C249201E400A4215E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BBAF7B249201E400A4215E /* CustomTableViewCell.swift */; };
@@ -54,6 +65,11 @@
 		2347C27E84D9E9524F36FCC7 /* Pods_webscraping_webscrapingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_webscraping_webscrapingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3513ADB1F50A7B0572BBDADE /* Pods-webscraping-webscrapingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webscraping-webscrapingUITests.release.xcconfig"; path = "Target Support Files/Pods-webscraping-webscrapingUITests/Pods-webscraping-webscrapingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		63CAA969EE76F2AEC66692E1 /* Pods-webscraping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webscraping.release.xcconfig"; path = "Target Support Files/Pods-webscraping/Pods-webscraping.release.xcconfig"; sourceTree = "<group>"; };
+		6903C9DD24CA553C00BAFFC3 /* TexasMonthlyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexasMonthlyViewController.swift; sourceTree = "<group>"; };
+		6903C9DF24CA555200BAFFC3 /* TexasAllTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexasAllTimeViewController.swift; sourceTree = "<group>"; };
+		6903C9E124CA556000BAFFC3 /* TexasWeeklyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexasWeeklyViewController.swift; sourceTree = "<group>"; };
+		692F44B024CCFB350020D1D8 /* TexasAllLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexasAllLineTableViewCell.swift; sourceTree = "<group>"; };
+		692F44B224CE4EC70020D1D8 /* TexasAllBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexasAllBarTableViewCell.swift; sourceTree = "<group>"; };
 		6930C13A2499F2190022FAE9 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		6930C13C2499F24D0022FAE9 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		6930C13E2499F3270022FAE9 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
@@ -76,6 +92,12 @@
 		69699EC22483490D00673156 /* webscrapingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = webscrapingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69699EC62483490D00673156 /* webscrapingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webscrapingUITests.swift; sourceTree = "<group>"; };
 		69699EC82483490D00673156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		696FB4CB24CFCBB500289D74 /* TexasWeeklyLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexasWeeklyLineTableViewCell.swift; sourceTree = "<group>"; };
+		696FB4CD24CFCBCC00289D74 /* TexasWeeklyBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexasWeeklyBarTableViewCell.swift; sourceTree = "<group>"; };
+		696FB4CF24D010CE00289D74 /* CountyGraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyGraphsViewController.swift; sourceTree = "<group>"; };
+		69960A8C24CE7AC900CA0FF4 /* ChartMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartMarker.swift; sourceTree = "<group>"; };
+		69960A8E24CF597B00CA0FF4 /* TexasMonthlyLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexasMonthlyLineTableViewCell.swift; sourceTree = "<group>"; };
+		69960A9024CF599B00CA0FF4 /* TexasMonthlyBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexasMonthlyBarTableViewCell.swift; sourceTree = "<group>"; };
 		69AAB20624C6330900C17533 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		69BBAF792491D64200A4215E /* DataNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataNumbers.swift; sourceTree = "<group>"; };
 		69BBAF7B249201E400A4215E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -168,13 +190,24 @@
 				69699EB22483490D00673156 /* Info.plist */,
 				69BBAF792491D64200A4215E /* DataNumbers.swift */,
 				69BBAF7B249201E400A4215E /* CustomTableViewCell.swift */,
-				69356C3924948A6600228ADD /* GraphsViewController.swift */,
 				6930C13A2499F2190022FAE9 /* NewsTableViewCell.swift */,
 				6930C13C2499F24D0022FAE9 /* NewsViewController.swift */,
 				6930C13E2499F3270022FAE9 /* Article.swift */,
 				6930C1402499F38E0022FAE9 /* WebviewViewController.swift */,
 				69BC4E9E24A6BB3D00D4CC31 /* FirebaseViewController.swift */,
 				6AF94E6824C6255D00E14851 /* SignUpViewController.swift */,
+				69356C3924948A6600228ADD /* GraphsViewController.swift */,
+				6903C9DF24CA555200BAFFC3 /* TexasAllTimeViewController.swift */,
+				692F44B024CCFB350020D1D8 /* TexasAllLineTableViewCell.swift */,
+				692F44B224CE4EC70020D1D8 /* TexasAllBarTableViewCell.swift */,
+				6903C9DD24CA553C00BAFFC3 /* TexasMonthlyViewController.swift */,
+				69960A8E24CF597B00CA0FF4 /* TexasMonthlyLineTableViewCell.swift */,
+				69960A9024CF599B00CA0FF4 /* TexasMonthlyBarTableViewCell.swift */,
+				6903C9E124CA556000BAFFC3 /* TexasWeeklyViewController.swift */,
+				696FB4CB24CFCBB500289D74 /* TexasWeeklyLineTableViewCell.swift */,
+				696FB4CD24CFCBCC00289D74 /* TexasWeeklyBarTableViewCell.swift */,
+				69960A8C24CE7AC900CA0FF4 /* ChartMarker.swift */,
+				696FB4CF24D010CE00289D74 /* CountyGraphsViewController.swift */,
 			);
 			path = webscraping;
 			sourceTree = "<group>";
@@ -450,18 +483,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6903C9DE24CA553C00BAFFC3 /* TexasMonthlyViewController.swift in Sources */,
 				69699EA92483490800673156 /* ViewController.swift in Sources */,
 				6930C1412499F38E0022FAE9 /* WebviewViewController.swift in Sources */,
 				69BBAF7C249201E400A4215E /* CustomTableViewCell.swift in Sources */,
 				69BC4E9F24A6BB3D00D4CC31 /* FirebaseViewController.swift in Sources */,
+				696FB4CC24CFCBB500289D74 /* TexasWeeklyLineTableViewCell.swift in Sources */,
 				6930C13B2499F2190022FAE9 /* NewsTableViewCell.swift in Sources */,
 				69699EA52483490800673156 /* AppDelegate.swift in Sources */,
 				6930C13F2499F3270022FAE9 /* Article.swift in Sources */,
 				69BBAF7A2491D64200A4215E /* DataNumbers.swift in Sources */,
 				69356C3A24948A6600228ADD /* GraphsViewController.swift in Sources */,
+				692F44B124CCFB350020D1D8 /* TexasAllLineTableViewCell.swift in Sources */,
+				696FB4D024D010CE00289D74 /* CountyGraphsViewController.swift in Sources */,
 				6930C13D2499F24D0022FAE9 /* NewsViewController.swift in Sources */,
+				692F44B324CE4EC70020D1D8 /* TexasAllBarTableViewCell.swift in Sources */,
+				696FB4CE24CFCBCC00289D74 /* TexasWeeklyBarTableViewCell.swift in Sources */,
 				69699EA72483490800673156 /* SceneDelegate.swift in Sources */,
+				6903C9E224CA556000BAFFC3 /* TexasWeeklyViewController.swift in Sources */,
+				6903C9E024CA555200BAFFC3 /* TexasAllTimeViewController.swift in Sources */,
+				69960A8D24CE7AC900CA0FF4 /* ChartMarker.swift in Sources */,
+				69960A9124CF599B00CA0FF4 /* TexasMonthlyBarTableViewCell.swift in Sources */,
 				6AF94E6924C6255D00E14851 /* SignUpViewController.swift in Sources */,
+				69960A8F24CF597B00CA0FF4 /* TexasMonthlyLineTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

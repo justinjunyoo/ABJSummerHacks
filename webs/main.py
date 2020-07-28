@@ -55,30 +55,17 @@ for i in range(1, 31):
     daily = []
     daily = getCases(countyName.text)
 
-
-
-#   u'Daily Cases': list(countyCases
-
-
-    # doc_ref.document(str(countyName.text)).set({u'Name': str(countyName.text), u'Cases': int(cases), u'Deaths': int(deaths), u'Trend_Cases': list(daily)})
     if countyName.text == "Texas Total":
-    #     store.collection(u'TexasTotal').document(u'Texas Total').delete()
-    #     store.collection(u'TexasTotal').document(str(countyName.text)).set({u'Name': str(countyName.text), u'Cases': int(cases), u'Deaths': int(deaths), u'Trend_Cases': list(daily)})
         store.collection(u'TexasTotal').document(str(countyName.text)).update({u'Trend_Cases': firestore.ArrayUnion([int(cases)])})
+        store.collection(u'TexasTotal').document(str("Texas")).update({u'Name': str(countyName.text), u'Cases': int(cases), u'Deaths': int(deaths)})
+        store.collection(u'TexasTotal').document(str(countyName.text)).update({u'Name': str(countyName.text), u'Cases': int(cases), u'Deaths': int(deaths)})
         # ^^ only run once daily  
 
     doc_ref.document(str(countyName.text)).update({u'Name': str(countyName.text), u'Cases': int(cases), u'Deaths': int(deaths)})
     doc_ref.document(str(countyName.text)).update({u'Trend_Cases': firestore.ArrayUnion([int(cases)])})
     
-
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-print("---------------------------------------------------------------------")
-# print(countyName.text)
-# print(countyCases.text)
-# print(countyDeaths.text)
 print("DONE")
 driver.close() 
 
