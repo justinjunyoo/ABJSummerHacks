@@ -88,10 +88,10 @@
                         <viewLayoutGuide key="safeArea" id="7C2-8N-547"/>
                     </view>
                     <connections>
-                        <outlet property="allTimeView" destination="wHZ-LA-nka" id="aLA-Ww-aCB"/>
-                        <outlet property="monthlyView" destination="TZm-8z-U7i" id="fMm-Nh-EbM"/>
+                        <outlet property="allTimeView" destination="gOj-Au-FUh" id="NSj-lY-ihn"/>
+                        <outlet property="monthlyView" destination="wHZ-LA-nka" id="W0j-Ko-AfV"/>
                         <outlet property="segment" destination="y1J-ad-zdb" id="IHd-FB-5K0"/>
-                        <outlet property="weeklyView" destination="gOj-Au-FUh" id="OAd-Qm-S0Y"/>
+                        <outlet property="weeklyView" destination="TZm-8z-U7i" id="Fe4-lC-wps"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORx-pL-Add" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -856,47 +856,239 @@
             </objects>
             <point key="canvasLocation" x="1120" y="1372"/>
         </scene>
-        <!--View Controller-->
+        <!--County Monthly View Controller-->
         <scene sceneID="wkj-E9-J46">
             <objects>
-                <viewController id="JYW-aR-Upx" sceneMemberID="viewController">
+                <viewController id="JYW-aR-Upx" customClass="CountyMonthlyViewController" customModule="webscraping" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jhX-Vp-1lX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="743"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FF6-Je-UYG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="743"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countyMonthlyLineCell" rowHeight="252" id="tRu-g2-3Jb" customClass="CountyMonthyLineTableViewCell" customModule="webscraping" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="252"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tRu-g2-3Jb" id="z5s-Lc-bY9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="252"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mqn-4H-41r" customClass="LineChartView" customModule="Charts">
+                                                    <rect key="frame" x="40" y="41" width="334" height="170"/>
+                                                    <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Mqn-4H-41r" firstAttribute="top" secondItem="z5s-Lc-bY9" secondAttribute="topMargin" constant="30" id="5ET-y7-A5e"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Mqn-4H-41r" secondAttribute="bottom" constant="30" id="jJs-kV-5Ze"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Mqn-4H-41r" secondAttribute="trailing" constant="20" id="tOb-e9-7Gl"/>
+                                                <constraint firstItem="Mqn-4H-41r" firstAttribute="leading" secondItem="z5s-Lc-bY9" secondAttribute="leadingMargin" constant="20" id="zz0-xh-6P8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lineChart" destination="Mqn-4H-41r" id="e4q-NF-RUY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countyMonthlyBarCell" rowHeight="271" id="HiL-TQ-Z8K" customClass="CountyMonthlyBarTableViewCell" customModule="webscraping" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="280" width="414" height="271"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HiL-TQ-Z8K" id="bTJ-iD-fVV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="271"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfU-6t-5sF" customClass="BarChartView" customModule="Charts">
+                                                    <rect key="frame" x="40" y="41" width="334" height="189"/>
+                                                    <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wfU-6t-5sF" secondAttribute="bottom" constant="30" id="BC6-it-S6V"/>
+                                                <constraint firstItem="wfU-6t-5sF" firstAttribute="top" secondItem="bTJ-iD-fVV" secondAttribute="topMargin" constant="30" id="e7c-0B-oMN"/>
+                                                <constraint firstItem="wfU-6t-5sF" firstAttribute="leading" secondItem="bTJ-iD-fVV" secondAttribute="leadingMargin" constant="20" id="eMH-c2-r01"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wfU-6t-5sF" secondAttribute="trailing" constant="20" id="kFf-9U-qsA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="barChart" destination="wfU-6t-5sF" id="ABd-vl-YlS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FF6-Je-UYG" firstAttribute="top" secondItem="jhX-Vp-1lX" secondAttribute="top" id="1jE-m9-tCo"/>
+                            <constraint firstItem="FF6-Je-UYG" firstAttribute="trailing" secondItem="POL-XC-dff" secondAttribute="trailing" id="DLS-By-gqK"/>
+                            <constraint firstItem="POL-XC-dff" firstAttribute="bottom" secondItem="FF6-Je-UYG" secondAttribute="bottom" id="iXS-4G-QRY"/>
+                            <constraint firstItem="FF6-Je-UYG" firstAttribute="leading" secondItem="POL-XC-dff" secondAttribute="leading" id="mi5-kv-At2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="POL-XC-dff"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="FF6-Je-UYG" id="BVN-Ah-rfl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egp-f3-I7k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3862.3188405797105" y="1354.3526785714284"/>
+            <point key="canvasLocation" x="-2845" y="1354"/>
         </scene>
-        <!--View Controller-->
+        <!--County Weekly View Controller-->
         <scene sceneID="Cbh-H6-IeO">
             <objects>
-                <viewController id="Y2W-jl-08I" sceneMemberID="viewController">
+                <viewController id="Y2W-jl-08I" customClass="CountyWeeklyViewController" customModule="webscraping" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dwh-uO-lZX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="743"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xjF-zN-nFF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="743"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countyWeeklyLineCell" rowHeight="252" id="VUj-lz-dCN" customClass="CountyWeeklyLineTableViewCell" customModule="webscraping" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="252"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VUj-lz-dCN" id="78Q-75-eD9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="252"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ApD-BK-gR3" customClass="LineChartView" customModule="Charts">
+                                                    <rect key="frame" x="40" y="41" width="334" height="170"/>
+                                                    <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ApD-BK-gR3" secondAttribute="bottom" constant="30" id="IHu-LX-HjP"/>
+                                                <constraint firstItem="ApD-BK-gR3" firstAttribute="top" secondItem="78Q-75-eD9" secondAttribute="topMargin" constant="30" id="dnc-fb-apP"/>
+                                                <constraint firstItem="ApD-BK-gR3" firstAttribute="leading" secondItem="78Q-75-eD9" secondAttribute="leadingMargin" constant="20" id="kAO-ch-rbe"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ApD-BK-gR3" secondAttribute="trailing" constant="20" id="qt6-xM-oB7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lineChart" destination="ApD-BK-gR3" id="3Hm-gK-t1n"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countyWeeklyBarCell" rowHeight="271" id="98G-g5-oJl" customClass="CountyWeeklyBarTableViewCell" customModule="webscraping" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="280" width="414" height="271"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="98G-g5-oJl" id="0yT-5J-ApD">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="271"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSG-Ql-lvt" customClass="BarChartView" customModule="Charts">
+                                                    <rect key="frame" x="40" y="41" width="334" height="189"/>
+                                                    <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wSG-Ql-lvt" firstAttribute="leading" secondItem="0yT-5J-ApD" secondAttribute="leadingMargin" constant="20" id="E40-6n-5Bx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wSG-Ql-lvt" secondAttribute="bottom" constant="30" id="GTl-ih-cQt"/>
+                                                <constraint firstItem="wSG-Ql-lvt" firstAttribute="top" secondItem="0yT-5J-ApD" secondAttribute="topMargin" constant="30" id="l6Q-e1-aCA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wSG-Ql-lvt" secondAttribute="trailing" constant="20" id="nRr-FC-Eop"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="barChart" destination="wSG-Ql-lvt" id="bPe-kN-4uH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xjF-zN-nFF" firstAttribute="trailing" secondItem="y70-4a-6FK" secondAttribute="trailing" id="2rJ-4b-qa8"/>
+                            <constraint firstItem="xjF-zN-nFF" firstAttribute="top" secondItem="Dwh-uO-lZX" secondAttribute="top" id="Ii6-GQ-lwO"/>
+                            <constraint firstItem="y70-4a-6FK" firstAttribute="bottom" secondItem="xjF-zN-nFF" secondAttribute="bottom" id="Jeh-gh-F2I"/>
+                            <constraint firstItem="xjF-zN-nFF" firstAttribute="leading" secondItem="y70-4a-6FK" secondAttribute="leading" id="XGl-Op-ND4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="y70-4a-6FK"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="xjF-zN-nFF" id="cXU-iN-iZM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXc-rq-b06" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2845" y="1354"/>
+            <point key="canvasLocation" x="-1864" y="1354"/>
         </scene>
-        <!--View Controller-->
+        <!--County All Time View Controller-->
         <scene sceneID="jmq-Va-GNY">
             <objects>
-                <viewController id="1i2-Nj-b0i" sceneMemberID="viewController">
+                <viewController id="1i2-Nj-b0i" customClass="CountyAllTimeViewController" customModule="webscraping" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ex1-o8-nEx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="743"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ycr-58-J3L">
+                                <rect key="frame" x="0.0" y="24" width="414" height="719"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countyLineCell" rowHeight="252" id="epV-lw-XTe" customClass="CountyAllLineTableViewCell" customModule="webscraping" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="252"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="epV-lw-XTe" id="MnS-ze-4SX">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="252"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgX-Wf-MQI" customClass="LineChartView" customModule="Charts">
+                                                    <rect key="frame" x="40" y="41" width="334" height="170"/>
+                                                    <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UgX-Wf-MQI" firstAttribute="leading" secondItem="MnS-ze-4SX" secondAttribute="leadingMargin" constant="20" id="8bd-tZ-TH2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UgX-Wf-MQI" secondAttribute="trailing" constant="20" id="FCl-De-uvo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UgX-Wf-MQI" secondAttribute="bottom" constant="30" id="Lsv-CI-Qcj"/>
+                                                <constraint firstItem="UgX-Wf-MQI" firstAttribute="top" secondItem="MnS-ze-4SX" secondAttribute="topMargin" constant="30" id="g8O-7J-xHX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lineChart" destination="UgX-Wf-MQI" id="qFT-vx-Wcg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countyBarCell" rowHeight="271" id="lsR-AT-OEF" customClass="CountyAllBarTableViewCell" customModule="webscraping" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="280" width="414" height="271"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lsR-AT-OEF" id="VFd-ta-hsv">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="271"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6e-GS-nFO" customClass="BarChartView" customModule="Charts">
+                                                    <rect key="frame" x="40" y="41" width="334" height="189"/>
+                                                    <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="a6e-GS-nFO" firstAttribute="leading" secondItem="VFd-ta-hsv" secondAttribute="leadingMargin" constant="20" id="9Iq-Ik-j2a"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="a6e-GS-nFO" secondAttribute="trailing" constant="20" id="dX4-BF-Gso"/>
+                                                <constraint firstItem="a6e-GS-nFO" firstAttribute="top" secondItem="VFd-ta-hsv" secondAttribute="topMargin" constant="30" id="dpD-vG-IhA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="a6e-GS-nFO" secondAttribute="bottom" constant="30" id="gaN-Vs-XAb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="barChart" destination="a6e-GS-nFO" id="V6C-OA-BwV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ycr-58-J3L" firstAttribute="trailing" secondItem="rdo-ei-UNp" secondAttribute="trailing" id="0C5-0g-yjm"/>
+                            <constraint firstItem="rdo-ei-UNp" firstAttribute="bottom" secondItem="ycr-58-J3L" secondAttribute="bottom" id="F9E-k2-9n4"/>
+                            <constraint firstItem="ycr-58-J3L" firstAttribute="leading" secondItem="rdo-ei-UNp" secondAttribute="leading" id="jNU-pq-Tjt"/>
+                            <constraint firstItem="ycr-58-J3L" firstAttribute="top" secondItem="ex1-o8-nEx" secondAttribute="top" constant="24" id="o6M-WO-z0v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rdo-ei-UNp"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ycr-58-J3L" id="SgE-lM-uF3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZg-Q0-zaC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1861" y="1354"/>
+            <point key="canvasLocation" x="-3771" y="1354"/>
         </scene>
     </scenes>
     <resources>

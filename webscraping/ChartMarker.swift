@@ -9,6 +9,7 @@ class ChartMarker: MarkerView {
         super.refreshContent(entry: entry, highlight: highlight)
 //        text = String(entry.y)
         text = "Day: \(entry.x), Cases: \(entry.y)"
+//        XAxis.LabelPosition(rawValue: <#T##Int#>)
     }
 
     override func draw(context: CGContext, point: CGPoint) {

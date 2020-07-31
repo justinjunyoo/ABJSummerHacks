@@ -10,9 +10,10 @@ import UIKit
 
 class CountyGraphsViewController: UIViewController {
 
+    
+    @IBOutlet weak var allTimeView: UIView!
     @IBOutlet weak var weeklyView: UIView!
     @IBOutlet weak var monthlyView: UIView!
-    @IBOutlet weak var allTimeView: UIView!
     @IBOutlet weak var segment: UISegmentedControl!
     
     override func viewDidLoad() {
@@ -91,8 +92,10 @@ class CountyGraphsViewController: UIViewController {
     }
     
     @IBAction func leaveView(_ sender: Any) {
+        UserDefaults.resetStandardUserDefaults()
         self.dismiss(animated: true, completion: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
 }
+

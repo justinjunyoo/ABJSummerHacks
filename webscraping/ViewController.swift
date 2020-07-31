@@ -74,8 +74,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        (self.data[indexPath.row + 1].name)
+        UserDefaults.standard.set(self.data[indexPath.row + 1].name, forKey: "name")
         tableView.deselectRow(at: indexPath, animated: true)
         let view = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "graph") as! CountyGraphsViewController
+        _ = view.view
         view.modalPresentationStyle = .fullScreen
         self.present(view, animated: true, completion: nil)
     }

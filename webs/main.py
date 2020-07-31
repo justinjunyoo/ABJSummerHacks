@@ -8,11 +8,12 @@ from selenium.webdriver.chrome.options import Options
 
 
 def getCases(county):
-    loc = ('/Users/aarishbrohi/Desktop/brandon_work/webs/TexasData.xlsx')
+    loc = ('/Users/aarishbrohi/Desktop/brandon_work/webs/TexasData2.xlsx')
     wb = xlrd.open_workbook(loc) 
     sheet = wb.sheet_by_index(0)
-    sheet.cell_value(0, 0)
-    x = 3
+    # sheet.cell_value(0, 0)
+    x = 2
+    column = sheet.ncols
     dog = sheet.row_values(x)
     name = dog[0]
     cat = []
@@ -25,9 +26,33 @@ def getCases(county):
         if x > 270:
             break
     if name == str(county): 
-        for i in range (2,139):
+        for i in range(2,column):
             cat.append(dog[i])
+            i += 1
     return cat
+
+
+def getDates():
+    loc = ('/Users/aarishbrohi/Desktop/brandon_work/webs/TexasData2.xlsx')
+    wb = xlrd.open_workbook(loc) 
+    sheet = wb.sheet_by_index(0)
+    x = 2
+    column = sheet.ncols
+    dog = sheet.row_values(x)
+    name = dog[0]
+    cat = []
+    for i in range(2,column):
+        dog[i] = dog[i].replace('\r', '')
+        dog[i] = dog[i].replace('Cases', '')
+        dog[i] = dog[i].replace('\n', '')
+        dog[i] = dog[i].replace('*', '')
+        dog[i] = dog[i].replace(' ', '')
+        
+
+        cat.append(dog[i])
+        i += 1
+    return cat
+
 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -45,8 +70,9 @@ driver.get("https://www.worldometers.info/coronavirus/usa/texas/")
 
 
 
-for i in range(1, 31):
+for i in range(1, 32):
     temp = str(i)
+
     countyName = driver.find_element_by_xpath('//*[@id="usa_table_countries_today"]/tbody[1]/tr['+temp+']/td[1]')
     countyCases = driver.find_element_by_xpath('//*[@id="usa_table_countries_today"]/tbody[1]/tr['+temp+']/td[2]')
     countyDeaths = driver.find_element_by_xpath('//*[@id="usa_table_countries_today"]/tbody[1]/tr['+temp+']/td[4]')
@@ -54,18 +80,27 @@ for i in range(1, 31):
     deaths = countyDeaths.text.replace(',', '')
     daily = []
     daily = getCases(countyName.text)
+    if i == 2:
+        dates = getDates()
+        store.collection(u'TexasTotal').document(str("Dates")).set({u'Dates': list(dates)})
+        
+    
 
     if countyName.text == "Texas Total":
-        store.collection(u'TexasTotal').document(str(countyName.text)).update({u'Trend_Cases': firestore.ArrayUnion([int(cases)])})
-        store.collection(u'TexasTotal').document(str("Texas")).update({u'Name': str(countyName.text), u'Cases': int(cases), u'Deaths': int(deaths)})
-        store.collection(u'TexasTotal').document(str(countyName.text)).update({u'Name': str(countyName.text), u'Cases': int(cases), u'Deaths': int(deaths)})
+        #-- store.collection(u'TexasTotal').document(str(countyName.text)).update({u'Trend_Cases': firestore.ArrayUnion([int(cases)])})
+        store.collection(u'TexasTotal').document(str("Texas")).set({u'Name': str(countyName.text), u'Cases': int(cases), u'Deaths': int(deaths)})
+        #call bottom when adding excel sheet new and set above line to 'set'
+        store.collection(u'TexasTotal').document(str(countyName.text)).set({u'Name': str(countyName.text), u'Cases': int(cases), u'Deaths': int(deaths), u'Trend_Cases': list(daily)})
         # ^^ only run once daily  
 
-    doc_ref.document(str(countyName.text)).update({u'Name': str(countyName.text), u'Cases': int(cases), u'Deaths': int(deaths)})
-    doc_ref.document(str(countyName.text)).update({u'Trend_Cases': firestore.ArrayUnion([int(cases)])})
+    #-- doc_ref.document(str(countyName.text)).update({u'Name': str(countyName.text), u'Cases': int(cases), u'Deaths': int(deaths)})
+    #-- doc_ref.document(str(countyName.text)).update({u'Trend_Cases': firestore.ArrayUnion([int(cases)])})
+
+    doc_ref.document(str(countyName.text)).set({u'Name': str(countyName.text), u'Cases': int(cases), u'Deaths': int(deaths), u'Trend_Cases': list(daily)})
+    
     
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    
 print("DONE")
 driver.close() 
 

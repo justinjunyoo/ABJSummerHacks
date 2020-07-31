@@ -16,6 +16,7 @@ class TexasAllTimeViewController: UIViewController, UITableViewDelegate, UITable
 
     @IBOutlet weak var tableView: UITableView!
     
+    var dates = [String]()
     let group = DispatchGroup()
     var alltimeTexas = [Double]()
     var dailyAllTexas = [Double]()
@@ -28,6 +29,7 @@ class TexasAllTimeViewController: UIViewController, UITableViewDelegate, UITable
         tableView.allowsSelection = false
         cnt += 1
         getFirestoreData()
+        getDates()
         self.tableView.reloadData()
         super.viewDidLoad()
     }
@@ -46,7 +48,7 @@ class TexasAllTimeViewController: UIViewController, UITableViewDelegate, UITable
             if self.alltimeTexas.isEmpty == true{
                 return cell
             }
-            cell.setLineChart(values: self.alltimeTexas)
+            cell.setLineChart(str: self.dates, values: self.alltimeTexas)
             cell.lineChart.alpha = 1
             return cell
         }
@@ -93,5 +95,21 @@ class TexasAllTimeViewController: UIViewController, UITableViewDelegate, UITable
             }
         }
     }
+    
+    func getDates(){
+            self.group.enter()
+            Firestore.firestore().collection("TexasTotal").document("Dates").getDocument { (document, error) in
+                if let document = document {
+                    self.group.leave()
+                    self.dates = document["Dates"] as? Array ?? []
+                    if self.cnt == 1{
+                        self.tableView.reloadData()
+                    }
+                }
+                else if let err = error{
+                    debugPrint("Error: \(err)")
+                }
+            }
+        }
 
 }
