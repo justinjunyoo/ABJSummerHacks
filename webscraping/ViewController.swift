@@ -37,7 +37,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var texasTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var db: Firestore!
     var data = [County]()
     var cnt : Int = 0
     var countyCollection : Query!
@@ -49,18 +48,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //    let dispa = DispatchGroup()
     
     override func viewDidLoad() {
-//        print(data2.isEmpty , "dog")
+        
+
         tableView.delegate = self
         tableView.dataSource = self
-//        FirebaseViewController(nibName: nil, bundle: nil).getData()
+ 
         countyCollection = Firestore.firestore().collection("Counties").order(by: "Cases", descending: true)
-
         
-        print("Before starting to get documents");
         cnt += 1;
         
         data = self.allInfo2()
-        print("After starting to get documents");
+
         if(data.isEmpty == false){
             self.texasTitle.text = "Texas Total"
             texasTitle.lineBreakMode = .byWordWrapping
@@ -72,17 +70,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             texasDeaths.lineBreakMode = .byWordWrapping
         }
         self.tableView.reloadData()
-        setGraphData()
         super.viewDidLoad()
     }
-    
-    public func setGraphData(){
-        data2 = self.data
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        (self.data[indexPath.row + 1].name)
+        UserDefaults.standard.set(self.data[indexPath.row + 1].name, forKey: "name")
+        tableView.deselectRow(at: indexPath, animated: true)
+        let view = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "graph") as! CountyGraphsViewController
+        _ = view.view
+        view.modalPresentationStyle = .fullScreen
+        self.present(view, animated: true, completion: nil)
     }
     
     
     public func allInfo2() -> [County]{
-        print("begin")
         self.group.enter()
         countyCollection.getDocuments { (snapshot, error) in
 
@@ -99,6 +101,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     let deaths2 = (documents["Deaths"] as? Int)
                     let data2 = County(name: name2!, cases: cases2!, deaths: deaths2!)
                     self.data.append(data2)
+
                 }
                 self.texasTitle.text = "Texas Total"
                 self.texasTitle.lineBreakMode = .byWordWrapping
@@ -109,11 +112,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.texasDeaths.text = "Deaths: " + String(self.data[0].deaths)
                 self.texasDeaths.lineBreakMode = .byWordWrapping
                 
-//                let defaults = UserDefaults.standard
-//                if let data = defaults.data(forKey: "SavedItemArray") {
-//                    let array = try! PropertyListDecoder().decode([County].self, from: data)
-//                }
-//                UserDefaults.standard.set(try? PropertyListEncoder().encode(self.data), forKey:"key")
+
                 var cases_cnt = [Int]()
                 var deaths_cnt = [Int]()
                 var names_cnt = [String]()
@@ -122,18 +121,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     deaths_cnt.append(self.data[i].deaths)
                     names_cnt.append(self.data[i].name)
                 }
-                UserDefaults.resetStandardUserDefaults()
+
                 if self.cnt == 1 {
-                    UserDefaults.resetStandardUserDefaults()
-                    UserDefaults.standard.set(cases_cnt, forKey: "case_count")
-                    UserDefaults.standard.set(deaths_cnt, forKey: "death_count")
-                    UserDefaults.standard.set(names_cnt, forKey: "name_count")
-        
+
                     self.viewDidLoad()
                 }
             }
         }
-        print("end")
 //        self.group.wait()
         return data
     }
@@ -150,7 +144,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 100.0
+        return 100.0
           
     }
     
@@ -162,7 +156,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         else{
             cell.cellView.layer.cornerRadius = 20
-            cell.selectionStyle = .none
 
             cell.name.text = String(data[indexPath.row + 1].name)
             cell.name.lineBreakMode = .byWordWrapping

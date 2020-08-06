@@ -12,30 +12,21 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var data = DataNumbers(nibName: nil, bundle: nil).allInfo()
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
+        // Navigation Bar Color
+        UINavigationBar.appearance().barTintColor = uicolorFromHex(rgbValue: 0x313547)
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.lightText]
         
-//        let db = Firestore.firestore()
-//        print(db) // silence warning
-//
-//        for i in 0...data.count-1{
-//            db.collection("Counties").document("\(data[i].name)").setData([
-//                "Name": "\(data[i].name)",
-//                "Cases": "\(data[i].cases)",
-//                "Deaths": "\(data[i].deaths)"
-//            ]) { err in
-//                if let err = err {
-//                    print("Error writing document: \(err)")
-//                } else {
-//                    print("Document successfully written!")
-//                }
-//            }
-//        }
-
+        // Tab Bar Color
+        UITabBar.appearance().barTintColor = uicolorFromHex(rgbValue: 0x313547)
+        
+        // Segmented Control Text Color
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.lightText], for: .normal)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.lightText], for: .selected)
+        
         return true
     }
 
@@ -53,6 +44,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    func uicolorFromHex(rgbValue:UInt32)->UIColor {
+        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
+        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
+        let blue = CGFloat(rgbValue & 0xFF)/256.0
+        
+        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    }
 }
 

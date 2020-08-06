@@ -28,8 +28,8 @@ class WebviewViewController: UIViewController, WKNavigationDelegate, MFMailCompo
     override func loadView() {
         super.loadView()
         webView.navigationDelegate = self
-
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.load(URLRequest(url: URL(string: url!)!))

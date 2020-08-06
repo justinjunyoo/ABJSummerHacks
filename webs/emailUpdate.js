@@ -41,6 +41,3 @@ exports.onItemCreation = functions.firestore.document('TexasTotal/{docId}')
        }
      }).then(() => console.log('Queued email for delivery!'));
 });
-
-
-//maybe trigger on update instead

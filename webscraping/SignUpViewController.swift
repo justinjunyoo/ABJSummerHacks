@@ -12,11 +12,17 @@ import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var signButton: UIButton!
+    @IBOutlet weak var signLabel: UILabel!
+    
     override func viewDidLoad() {
+        signLabel.sizeToFit()
+        signButton.sizeToFit()
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
     
     
     func isValidEmailAddress(emailAddressString: String) -> Bool {
