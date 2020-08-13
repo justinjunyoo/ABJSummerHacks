@@ -199,42 +199,12 @@
 			isa = PBXGroup;
 			children = (
 				69AAB20624C6330900C17533 /* GoogleService-Info.plist */,
-				69699EA42483490800673156 /* AppDelegate.swift */,
-				69699EA62483490800673156 /* SceneDelegate.swift */,
-				69699EA82483490800673156 /* ViewController.swift */,
-				69699EAA2483490800673156 /* Main.storyboard */,
-				69699EAD2483490D00673156 /* Assets.xcassets */,
-				69699EAF2483490D00673156 /* LaunchScreen.storyboard */,
 				69699EB22483490D00673156 /* Info.plist */,
-				69BBAF792491D64200A4215E /* DataNumbers.swift */,
-				69BBAF7B249201E400A4215E /* CustomTableViewCell.swift */,
-				6930C13A2499F2190022FAE9 /* NewsTableViewCell.swift */,
-				6930C13C2499F24D0022FAE9 /* NewsViewController.swift */,
-				6930C13E2499F3270022FAE9 /* Article.swift */,
-				69960A8C24CE7AC900CA0FF4 /* ChartMarker.swift */,
-				6930C1402499F38E0022FAE9 /* WebviewViewController.swift */,
-				69BC4E9E24A6BB3D00D4CC31 /* FirebaseViewController.swift */,
-				6AF94E6824C6255D00E14851 /* SignUpViewController.swift */,
-				69356C3924948A6600228ADD /* GraphsViewController.swift */,
-				6903C9DF24CA555200BAFFC3 /* TexasAllTimeViewController.swift */,
-				692F44B024CCFB350020D1D8 /* TexasAllLineTableViewCell.swift */,
-				692F44B224CE4EC70020D1D8 /* TexasAllBarTableViewCell.swift */,
-				6903C9DD24CA553C00BAFFC3 /* TexasMonthlyViewController.swift */,
-				69960A8E24CF597B00CA0FF4 /* TexasMonthlyLineTableViewCell.swift */,
-				69960A9024CF599B00CA0FF4 /* TexasMonthlyBarTableViewCell.swift */,
-				6903C9E124CA556000BAFFC3 /* TexasWeeklyViewController.swift */,
-				696FB4CB24CFCBB500289D74 /* TexasWeeklyLineTableViewCell.swift */,
-				696FB4CD24CFCBCC00289D74 /* TexasWeeklyBarTableViewCell.swift */,
-				696FB4CF24D010CE00289D74 /* CountyGraphsViewController.swift */,
-				699150FC24D0C74000F6F153 /* CountyAllTimeViewController.swift */,
-				6991510224D0D58E00F6F153 /* CountyAllLineTableViewCell.swift */,
-				6991510424D0D5B500F6F153 /* CountyAllBarTableViewCell.swift */,
-				699150FE24D0C75400F6F153 /* CountyMonthlyViewController.swift */,
-				6991510624D1122F00F6F153 /* CountyMonthyLineTableViewCell.swift */,
-				6991510824D112D000F6F153 /* CountyMonthlyBarTableViewCell.swift */,
-				6991510024D0C77D00F6F153 /* CountyWeeklyViewController.swift */,
-				6991510A24D1133200F6F153 /* CountyWeeklyLineTableViewCell.swift */,
-				6991510C24D1134A00F6F153 /* CountyWeeklyBarTableViewCell.swift */,
+				69E7EE2324DBCB3A00E54619 /* TexasView */,
+				69E7EE2224DBCB2500E54619 /* NewsView */,
+				69E7EE2424DBCB6D00E54619 /* CountyView */,
+				69E7EE2524DBCB8100E54619 /* Storyboard&Images */,
+				69E7EE2624DBCB9700E54619 /* Resources */,
 			);
 			path = webscraping;
 			sourceTree = "<group>";
@@ -255,6 +225,124 @@
 				69699EC82483490D00673156 /* Info.plist */,
 			);
 			path = webscrapingUITests;
+			sourceTree = "<group>";
+		};
+		69E7EE2224DBCB2500E54619 /* NewsView */ = {
+			isa = PBXGroup;
+			children = (
+				6930C13A2499F2190022FAE9 /* NewsTableViewCell.swift */,
+				6930C13C2499F24D0022FAE9 /* NewsViewController.swift */,
+				6930C13E2499F3270022FAE9 /* Article.swift */,
+				6930C1402499F38E0022FAE9 /* WebviewViewController.swift */,
+			);
+			path = NewsView;
+			sourceTree = "<group>";
+		};
+		69E7EE2324DBCB3A00E54619 /* TexasView */ = {
+			isa = PBXGroup;
+			children = (
+				69356C3924948A6600228ADD /* GraphsViewController.swift */,
+				69E7EE2A24DBCBD200E54619 /* TexasAll */,
+				69E7EE2B24DBCBDA00E54619 /* TexasMonth */,
+				69E7EE2C24DBCBE400E54619 /* TexasWeek */,
+			);
+			path = TexasView;
+			sourceTree = "<group>";
+		};
+		69E7EE2424DBCB6D00E54619 /* CountyView */ = {
+			isa = PBXGroup;
+			children = (
+				69699EA82483490800673156 /* ViewController.swift */,
+				69BBAF7B249201E400A4215E /* CustomTableViewCell.swift */,
+				6AF94E6824C6255D00E14851 /* SignUpViewController.swift */,
+				696FB4CF24D010CE00289D74 /* CountyGraphsViewController.swift */,
+				69E7EE2724DBCBAB00E54619 /* CountyAll */,
+				69E7EE2824DBCBB600E54619 /* CountyMonth */,
+				69E7EE2924DBCBBD00E54619 /* CountyWeek */,
+			);
+			path = CountyView;
+			sourceTree = "<group>";
+		};
+		69E7EE2524DBCB8100E54619 /* Storyboard&Images */ = {
+			isa = PBXGroup;
+			children = (
+				69699EAA2483490800673156 /* Main.storyboard */,
+				69699EAD2483490D00673156 /* Assets.xcassets */,
+				69699EAF2483490D00673156 /* LaunchScreen.storyboard */,
+			);
+			path = "Storyboard&Images";
+			sourceTree = "<group>";
+		};
+		69E7EE2624DBCB9700E54619 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				69699EA42483490800673156 /* AppDelegate.swift */,
+				69699EA62483490800673156 /* SceneDelegate.swift */,
+				69BBAF792491D64200A4215E /* DataNumbers.swift */,
+				69960A8C24CE7AC900CA0FF4 /* ChartMarker.swift */,
+				69BC4E9E24A6BB3D00D4CC31 /* FirebaseViewController.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		69E7EE2724DBCBAB00E54619 /* CountyAll */ = {
+			isa = PBXGroup;
+			children = (
+				699150FC24D0C74000F6F153 /* CountyAllTimeViewController.swift */,
+				6991510224D0D58E00F6F153 /* CountyAllLineTableViewCell.swift */,
+				6991510424D0D5B500F6F153 /* CountyAllBarTableViewCell.swift */,
+			);
+			path = CountyAll;
+			sourceTree = "<group>";
+		};
+		69E7EE2824DBCBB600E54619 /* CountyMonth */ = {
+			isa = PBXGroup;
+			children = (
+				699150FE24D0C75400F6F153 /* CountyMonthlyViewController.swift */,
+				6991510624D1122F00F6F153 /* CountyMonthyLineTableViewCell.swift */,
+				6991510824D112D000F6F153 /* CountyMonthlyBarTableViewCell.swift */,
+			);
+			path = CountyMonth;
+			sourceTree = "<group>";
+		};
+		69E7EE2924DBCBBD00E54619 /* CountyWeek */ = {
+			isa = PBXGroup;
+			children = (
+				6991510024D0C77D00F6F153 /* CountyWeeklyViewController.swift */,
+				6991510A24D1133200F6F153 /* CountyWeeklyLineTableViewCell.swift */,
+				6991510C24D1134A00F6F153 /* CountyWeeklyBarTableViewCell.swift */,
+			);
+			path = CountyWeek;
+			sourceTree = "<group>";
+		};
+		69E7EE2A24DBCBD200E54619 /* TexasAll */ = {
+			isa = PBXGroup;
+			children = (
+				6903C9DF24CA555200BAFFC3 /* TexasAllTimeViewController.swift */,
+				692F44B024CCFB350020D1D8 /* TexasAllLineTableViewCell.swift */,
+				692F44B224CE4EC70020D1D8 /* TexasAllBarTableViewCell.swift */,
+			);
+			path = TexasAll;
+			sourceTree = "<group>";
+		};
+		69E7EE2B24DBCBDA00E54619 /* TexasMonth */ = {
+			isa = PBXGroup;
+			children = (
+				6903C9DD24CA553C00BAFFC3 /* TexasMonthlyViewController.swift */,
+				69960A8E24CF597B00CA0FF4 /* TexasMonthlyLineTableViewCell.swift */,
+				69960A9024CF599B00CA0FF4 /* TexasMonthlyBarTableViewCell.swift */,
+			);
+			path = TexasMonth;
+			sourceTree = "<group>";
+		};
+		69E7EE2C24DBCBE400E54619 /* TexasWeek */ = {
+			isa = PBXGroup;
+			children = (
+				6903C9E124CA556000BAFFC3 /* TexasWeeklyViewController.swift */,
+				696FB4CB24CFCBB500289D74 /* TexasWeeklyLineTableViewCell.swift */,
+				696FB4CD24CFCBCC00289D74 /* TexasWeeklyBarTableViewCell.swift */,
+			);
+			path = TexasWeek;
 			sourceTree = "<group>";
 		};
 		D87ACEC045E3D3549C98B3D3 /* Pods */ = {
@@ -722,7 +810,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.brandonpham29.webscraping;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brandonpham29.FireStoreTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -741,7 +829,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.brandonpham29.webscraping;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brandonpham29.FireStoreTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
