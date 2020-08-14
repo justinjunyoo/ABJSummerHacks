@@ -29,12 +29,11 @@ chrome_options.add_experimental_option("prefs", {
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--disable-software-rasterizer')
 
-# PATH = "/Library/Developer/CommandLineTools/usr/bin/chromedriver"    # path to webdriver file
-# driver = webdriver.Chrome(PATH)
 
-driver2 = webdriver.Chrome(chrome_options=chrome_options, executable_path=r'/Users/justinyoo/Desktop/GitHub/ABJSummerHacks/webs/chromedriver')
+#Scrape data from excel on Texas Department of Health Services Website
+driver2 = webdriver.Chrome(chrome_options=chrome_options, executable_path=r'<path_to_chromedriver>')
 
-download_dir = "/Users/aarishbrohi/Desktop/Apps/brandon_work/webs/"
+download_dir = "path_to_download_default_directory"
 
 enable_download_headless(driver2, download_dir)
 
@@ -42,51 +41,49 @@ driver2.get("https://www.dshs.texas.gov/coronavirus/additionaldata/")
 
 driver2.find_element_by_xpath('//*[@id="ctl00_ContentPlaceHolder1_uxContent"]/ul[1]/li[1]/a').click()
 
+loc = ('path_to_Texas COVID-19 Case Count Data by County.xlsx')
 
 def getCases(county):
-    loc = ('/Users/aarishbrohi/Desktop/Apps/brandon_work/webs/Texas COVID-19 Case Count Data by County.xlsx')
     wb = xlrd.open_workbook(loc) 
     sheet = wb.sheet_by_index(0)
-    # sheet.cell_value(0, 0)
     x = 2
     column = sheet.ncols
-    dog = sheet.row_values(x)
-    name = dog[0]
-    cat = []
+    temp = sheet.row_values(x)
+    name = temp[0]
+    res = []
     if (str(county) == 'Texas Total'):
         county = 'Total'
     while( name != str(county) ):
         x += 1
-        dog = sheet.row_values(x)
-        name = dog[0]
+        temp = sheet.row_values(x)
+        name = temp[0]
         if x > 270:
             break
     if name == str(county): 
         for i in range(2,column):
-            cat.append(dog[i])
+            res.append(temp[i])
             i += 1
-    return cat
+    return res
 
 
 def getDates():
-    loc = ('/Users/justinyoo/Desktop/GitHub/ABJSummerHacks/websTexas COVID-19 Case Count Data by County.xlsx')
     wb = xlrd.open_workbook(loc) 
     sheet = wb.sheet_by_index(0)
     x = 2
     column = sheet.ncols
-    dog = sheet.row_values(x)
-    name = dog[0]
-    cat = []
+    temp = sheet.row_values(x)
+    name = temp[0]
+    res = []
     for i in range(2,column):
-        dog[i] = dog[i].replace('\r', '')
-        dog[i] = dog[i].replace('Cases', '')
-        dog[i] = dog[i].replace('\n', '')
-        dog[i] = dog[i].replace('*', '')
-        dog[i] = dog[i].replace(' ', '')
+        temp[i] = temp[i].replace('\r', '')
+        temp[i] = temp[i].replace('Cases', '')
+        temp[i] = temp[i].replace('\n', '')
+        temp[i] = temp[i].replace('*', '')
+        temp[i] = temp[i].replace(' ', '')
 
-        cat.append(dog[i])
+        res.append(temp[i])
         i += 1
-    return cat
+    return res
 
 
 
@@ -96,23 +93,22 @@ app = firebase_admin.initialize_app(cred)
 store = firestore.client()
 doc_ref = store.collection(u'Counties')
 
+#Scrape Data from Worldometer Texas Website
 
 options = Options()
 options.headless = True
 options.add_argument("--window-size=1920,1200")
-driver = webdriver.Chrome(options=options, executable_path=r'/Users/aarishbrohi/Desktop/Apps/brandon_work/webs/chromedriver')
+driver = webdriver.Chrome(options=options, executable_path=r'<path_to_chromedriver>')
 driver.get("https://www.worldometers.info/coronavirus/usa/texas/")
 
 
 
-for i in range(1, 100):
+for i in range(1, 255):
     temp = str(i)
 
     countyName = driver.find_element_by_xpath('//*[@id="usa_table_countries_today"]/tbody[1]/tr['+temp+']/td[1]')
-    # countyCases = driver.find_element_by_xpath('//*[@id="usa_table_countries_today"]/tbody[1]/tr['+temp+']/td[2]')
     countyDeaths = driver.find_element_by_xpath('//*[@id="usa_table_countries_today"]/tbody[1]/tr['+temp+']/td[4]')
 
-    # cases = countyCases.text.replace(',', '')
     deaths = countyDeaths.text.replace(',', '')
     if deaths == '' :
         deaths = int(0)
@@ -126,14 +122,9 @@ for i in range(1, 100):
         continue
 
     if countyName.text == "Texas Total":
-        #-- store.collection(u'TexasTotal').document(str(countyName.text)).update({u'Trend_Cases': firestore.ArrayUnion([int(cases)])})
         store.collection(u'TexasTotal').document(str("Texas")).set({u'Name': str(countyName.text), u'Cases': int(daily[-1]), u'Deaths': int(deaths)})
-        #call bottom when adding excel sheet new and set above line to 'set'
         store.collection(u'TexasTotal').document(str(countyName.text)).set({u'Name': str(countyName.text), u'Cases': int(daily[-1]), u'Deaths': int(deaths), u'Trend_Cases': list(daily)})
-        # ^^ only run once daily  
 
-    #-- doc_ref.document(str(countyName.text)).update({u'Name': str(countyName.text), u'Cases': int(cases), u'Deaths': int(deaths)})
-    #-- doc_ref.document(str(countyName.text)).update({u'Trend_Cases': firestore.ArrayUnion([int(cases)])})
     doc_ref.document(str(countyName.text)).set({u'Name': str(countyName.text), u'Cases': int(daily[-1]), u'Deaths': int(deaths), u'Trend_Cases': list(daily)})
     
     
