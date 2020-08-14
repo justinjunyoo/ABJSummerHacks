@@ -10,5 +10,14 @@ Run the app on your computer in order to see the number of cases and deaths for 
 ## Video Demonstration
 https://www.youtube.com/watch?v=PsEnn8B7RBU
 
+## Technologies
+CocoaPods:
+<li> SwiftSoup </li>
+<li> Charts </li>
+<li> KingFisher </li>
+<li> Firebase/Analytics </li>
+<li> Firebase/Firestore </li>
+<li> FirebaseFirestoreSwift </li>
+
 ## Contributing
 Contributions are welcome! This was a project that we worked on in order to get familiar with iOS development and other things that come with working on a group project. If you have any cool ideas that you would like to add, feel free to do so and make a pull request!
