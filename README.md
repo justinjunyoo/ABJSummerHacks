@@ -12,7 +12,6 @@ https://www.youtube.com/watch?v=PsEnn8B7RBU
 
 ## Technologies
 CocoaPods:
-<li> SwiftSoup </li>
 <li> Charts </li>
 <li> KingFisher </li>
 <li> Firebase/Analytics </li>
